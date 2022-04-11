@@ -17,13 +17,19 @@ public:
     drawables::TextureLoader loader;
 };
 
+#ifndef DEFAULT_FILENAME
+#define DEFAULT_FILENAME "";
+#endif
+
 int main(int argc, char **argv) {
-    std::string library_filename;
+    std::string library_filename = DEFAULT_FILENAME;
 
     // Retrieve the (non-option) argument:
     if ((argc <= 1) || (argv[argc - 1] == nullptr) || (argv[argc - 1][0] == '-')) {  // there is NO input...
-        std::cerr << "No argument provided!" << std::endl;
-        return 1;
+        if (library_filename.empty()) {
+            std::cerr << "No argument provided!" << std::endl;
+            return 1;
+        }
     } else {  // there is an input...
         library_filename = argv[argc - 1];
     }

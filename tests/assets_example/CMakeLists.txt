@@ -23,3 +23,17 @@ target_link_libraries(assets_example
             parser
             spdlog::spdlog
         )
+
+add_executable(assets_example_validator
+        ${CMAKE_SOURCE_DIR}/src/validator/main.cpp
+        import_static.cpp
+        )
+
+target_link_libraries(assets_example_validator
+        PRIVATE
+            validator-lib
+        )
+target_compile_definitions(assets_example_validator
+        PRIVATE
+            -DDEFAULT_FILENAME="${CMAKE_CURRENT_SOURCE_DIR}/TracksRC.xml"
+        )
