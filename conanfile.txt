@@ -1,5 +1,6 @@
 [requires]
 catch2/2.13.7
+render_context/v0.2.8@jgsogo/stable
 
 [generators]
 cmake
