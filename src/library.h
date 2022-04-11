@@ -2,8 +2,7 @@
 
 #include <string_view>
 
-#include "drawable.h"
-#include "texture_loader.h"
+#include "parser.h"
 
 namespace drawables {
 
@@ -11,7 +10,7 @@ namespace drawables {
     public:
         explicit Library(std::string_view name);
 
-        static Library parse(std::string_view name, const std::filesystem::path &filename, TextureLoader &loader);
+        static Library parse(Parser &parser, std::string_view name, const std::filesystem::path &filename);
 
         [[nodiscard]] std::string_view getName() const { return _name; }
 

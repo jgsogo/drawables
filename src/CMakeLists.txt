@@ -12,6 +12,8 @@ add_library(${PROJECT_NAME}
         id.h
         library.cpp
         library.h
+        parser.cpp
+        parser.h
         texture_loader.cpp
         texture_loader.h
         )

@@ -29,7 +29,7 @@ namespace drawables {
 
     }
 
-    Library Library::parse(std::string_view name, const std::filesystem::path &filename, TextureLoader &loader) {
+    Library Library::parse(Parser& parser, std::string_view name, const std::filesystem::path &filename) {
         spdlog::info("Library::parse(filename='{}')", filename.string());
 
         // Parse the document
@@ -50,7 +50,7 @@ namespace drawables {
 
             Library ret{library_name};
             for (rapidxml::xml_node<> *partNode = root_node->first_node("part"); partNode; partNode = partNode->next_sibling()) {
-                auto[id, part] = parseDrawableNode(partNode, filename, loader);
+                auto[id, part] = parser.parse(partNode, filename);
                 part->id = Id{std::string{name}, id};
                 ret._drawables.insert(std::make_pair(id, part));  // TODO: What if I apply XSLT transformation first instead of passing the arg?
             }
