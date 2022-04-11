@@ -18,13 +18,8 @@ set_target_properties(assets_example PROPERTIES
         )
 target_link_libraries(assets_example
         PUBLIC
-        drawables
+            drawables
         PRIVATE
-        spdlog::spdlog
+            parser
+            spdlog::spdlog
         )
-
-install(TARGETS ${PROJECT_NAME}
-        PUBLIC_HEADER DESTINATION include
-        RUNTIME DESTINATION bin
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib)

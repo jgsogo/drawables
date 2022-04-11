@@ -1,12 +1,13 @@
 #pragma once
 
-#include "drawable.h"
+#include "drawables/drawable.h"
+#include "drawables/connection.h"
+
 #include "connection.h"
 
 namespace example {
 
-    class LegoPart : public drawables::Drawable<ConnectionType> {
-    public:
+    struct LegoPart : public drawables::Drawable<ConnectionType> {
         using Connection = drawables::Connection<ConnectionType>;
 
         // Cross-reference

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "parser.h"
+#include "parser/parser.h"
 
 namespace example::parser {
 

@@ -10,7 +10,7 @@
 #include "primitives/polygon.hpp"
 #include "primitives/image.hpp"
 
-#include "../texture_loader.h"
+#include "texture_loader.h"
 
 namespace drawables::parser {
     using namespace math::units;

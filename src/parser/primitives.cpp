@@ -1,7 +1,6 @@
 #include "primitives.h"
 
 #include <algorithm>
-#include <rapidxml.hpp>
 #include <spdlog/spdlog.h>
 
 #include "helpers.hpp"

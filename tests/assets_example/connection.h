@@ -1,7 +1,7 @@
 #pragma once
 
 #include "parser/enums.hpp"
-#include "drawable.h"
+#include "drawables/drawable.h"
 
 namespace example {
 
@@ -15,12 +15,11 @@ namespace drawables {
 
     template<>
     void Drawable<example::ConnectionType>::drawConnection(render::ImGuiContext <math::units::mm> &render,
-                                                           const Connection<example::ConnectionType> &con) const;
+                                                           const Connection<example::ConnectionType> &con);
 
 }
 
 namespace drawables::parser {
-    // train voltage
     template<>
     example::ConnectionType parseEnum<example::ConnectionType>(std::string_view str);
 

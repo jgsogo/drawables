@@ -1,35 +1,29 @@
-#include "library.h"
+#include "parser.h"
 
-#include <vector>
 #include <fstream>
-#include <sstream>
-#include "rapidxml.hpp"
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
 
 namespace drawables {
-    namespace {
-        std::pair<std::string, std::shared_ptr<BaseDrawable>> parseDrawableNode(rapidxml::xml_node<> *node,
-                                                                                const std::filesystem::path &filename,
-                                                                                TextureLoader &loader) {
-            auto type = node->first_attribute("type");
-            if (type == nullptr) {
-                //return madbricks::parts::parser::parsePart<madbricks::parts::Part>(node, filename, loader);
-            } else if (strcmp(type->value(), "track") == 0) {
-                //return madbricks::parts::parser::parsePart<madbricks::parts::train::Track>(node, filename, loader);
-            } else {
-                // TODO: Handle error
-                std::stringstream ss;
-                ss << "Parsing not implemented for type '" << type->value() << "'";
-                throw std::runtime_error(ss.str());
-            }
+
+    Parser::Parser(TextureLoader &loader) : _loader{loader} {};
+
+    void Parser::registerNodeParser(std::string_view nodeType, const NodeParserCallback& parseFunction) {
+        _parseMethods.insert(std::make_pair(nodeType, parseFunction));
+    }
+
+    std::pair<std::string, std::shared_ptr<BaseDrawable>> Parser::parse(rapidxml::xml_node<> *node,
+                                                                        const std::filesystem::path &filename) {
+        auto type = node->first_attribute("type");
+        auto it = _parseMethods.find(type->value());
+        if (it != _parseMethods.end()) {
+            return it->second(node, filename, _loader);
+        } else {
+            // TODO: Handle error
         }
-    }
-
-    Library::Library(std::string_view name) : _name(name) {
 
     }
 
-    Library Library::parse(Parser& parser, std::string_view name, const std::filesystem::path &filename) {
+    Library Parser::parse(std::string_view name, const std::filesystem::path &filename) {
         spdlog::info("Library::parse(filename='{}')", filename.string());
 
         // Parse the document
@@ -50,7 +44,7 @@ namespace drawables {
 
             Library ret{library_name};
             for (rapidxml::xml_node<> *partNode = root_node->first_node("part"); partNode; partNode = partNode->next_sibling()) {
-                auto[id, part] = parser.parse(partNode, filename);
+                auto[id, part] = this->parse(partNode, filename);
                 part->id = Id{std::string{name}, id};
                 ret._drawables.insert(std::make_pair(id, part));  // TODO: What if I apply XSLT transformation first instead of passing the arg?
             }
@@ -60,5 +54,4 @@ namespace drawables {
             spdlog::error("Cannot find root node 'parts_library' in filename '{}'", filename.string());
         }
     }
-
 }

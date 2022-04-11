@@ -1,8 +1,9 @@
 #pragma once
 
-#include "rapidxml.hpp"
+#include <rapidxml.hpp>
 
-#include "drawable.h"
+#include "drawables/drawable.h"
+#include "drawables/library.h"
 #include "texture_loader.h"
 
 
@@ -20,6 +21,8 @@ namespace drawables {
         void registerNodeParser(std::string_view nodeType, const NodeParserCallback& parseFunction);
 
         NodeParsed parse(rapidxml::xml_node<> *node, const std::filesystem::path &filename);
+
+        Library parse(std::string_view name, const std::filesystem::path &filename);
 
     protected:
         TextureLoader &_loader;

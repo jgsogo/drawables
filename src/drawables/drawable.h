@@ -16,8 +16,7 @@
 
 namespace drawables {
 
-    class BaseDrawable {
-    public:
+    struct BaseDrawable {
         BaseDrawable() = default;
 
         virtual ~BaseDrawable() = default;
@@ -28,7 +27,6 @@ namespace drawables {
 
         void doRenderBBox(render::ImGuiContext <math::units::mm> &render, ImU32 color = IM_COL32(255, 0, 0, 255)) const;
 
-    public:
         Id id;
         std::string name;
         std::optional<std::string> description;
@@ -39,8 +37,7 @@ namespace drawables {
     };
 
     template<typename ConnectionTypes>
-    class Drawable : public BaseDrawable {
-    public:
+    struct Drawable : public BaseDrawable {
         Drawable() = default;
 
         ~Drawable() override = default;
@@ -50,12 +47,11 @@ namespace drawables {
             using namespace render::imgui::units;
             for (auto &con: connections) {
                 auto rctxt = render << con.position;
-                this->drawConnection(rctxt, con);
+                drawConnection(rctxt, con);
             }
         }
 
-    protected:
-        void drawConnection(render::ImGuiContext <math::units::mm> &render, const Connection<ConnectionTypes> &con) const {
+        static void drawConnection(render::ImGuiContext <math::units::mm> &render, const Connection<ConnectionTypes> &con) {
             using namespace math::units;
             using namespace render::imgui::units;
             render.drawCircle({0_mm, 0_mm}, 8_mm, IM_COL32_BLACK, 1_impx);
