@@ -1,6 +1,9 @@
 [requires]
 catch2/2.13.7
 render_context/v0.2.8@jgsogo/stable
+fmt/8.1.1
+spdlog/1.9.2
+rapidxml/1.13
 
 [generators]
 cmake

@@ -15,35 +15,52 @@
 #include "connection.h"
 
 namespace drawables {
-    enum class LODLevel {
-        LOD0,   // just bounding boxes
-        LOD1,   // only lines
-        LOD2    // images and textures
-    };
 
-    class Drawable {
-
+    class BaseDrawable {
     public:
-        Drawable() = default;
+        BaseDrawable() = default;
 
-        virtual ~Drawable() = default;
+        virtual ~BaseDrawable() = default;
 
-        void doRender(render::ImGuiContext <math::units::mm> &render, LODLevel level = LODLevel::LOD2) const;
+        void doRender(render::ImGuiContext <math::units::mm> &render, int level = -1) const;
 
-        void doRenderConnections(render::ImGuiContext <math::units::mm> &render) const;
+        virtual void doRenderConnections(render::ImGuiContext <math::units::mm> &render) const = 0;
 
         void doRenderBBox(render::ImGuiContext <math::units::mm> &render, ImU32 color = IM_COL32(255, 0, 0, 255)) const;
+
     public:
         Id id;
         std::string name;
-        std::optional <std::string> description;
+        std::optional<std::string> description;
         Magnum::Math::Range2D <math::Milimeters> bbox;
-        std::vector <Connection> connections;
 
-        // This is a CAD-like program, everything is to be rendered
+        using Primitive = primitives::Primitive<math::units::mm, ImDrawList, render::imgui::units::impx>;
+        std::map<int, std::vector<std::shared_ptr<Primitive>>, std::greater<>> renderData;
+    };
 
-        std::map <LODLevel, std::vector<
-                std::shared_ptr < primitives::Primitive < math::units::mm, ImDrawList, render::imgui::units::impx>>>, std::greater<>> renderData;
+    template<typename ConnectionTypes>
+    class Drawable : public BaseDrawable {
+    public:
+        Drawable() = default;
 
+        ~Drawable() override = default;
+
+        void doRenderConnections(render::ImGuiContext <math::units::mm> &render) const override {
+            using namespace math::units;
+            using namespace render::imgui::units;
+            for (auto &con: connections) {
+                this->drawConnection(render << con.position, con);
+            }
+        }
+
+    protected:
+        void drawConnection(render::ImGuiContext <math::units::mm> &render, const Connection<ConnectionTypes> &con) {
+            using namespace math::units;
+            using namespace render::imgui::units;
+            render.drawCircle({0_mm, 0_mm}, 8_mm, IM_COL32_BLACK, 1_impx);
+        }
+
+    public:
+        std::vector<Connection<ConnectionTypes>> connections;
     };
 }

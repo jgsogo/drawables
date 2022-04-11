@@ -4,7 +4,10 @@
    "0": {
     "requires": [
      "1",
-     "2"
+     "2",
+     "17",
+     "18",
+     "19"
     ],
     "path": "conanfile.txt",
     "context": "host"
@@ -40,7 +43,7 @@
      "11"
     ],
     "build_requires": [
-     "17"
+     "20"
     ],
     "context": "host"
    },
@@ -109,6 +112,21 @@
     "context": "host"
    },
    "17": {
+    "ref": "fmt/8.1.1",
+    "context": "host"
+   },
+   "18": {
+    "ref": "spdlog/1.9.2",
+    "requires": [
+     "17"
+    ],
+    "context": "host"
+   },
+   "19": {
+    "ref": "rapidxml/1.13",
+    "context": "host"
+   },
+   "20": {
     "ref": "corrade/2020.06",
     "context": "build"
    }
