@@ -49,12 +49,13 @@ namespace drawables {
             using namespace math::units;
             using namespace render::imgui::units;
             for (auto &con: connections) {
-                this->drawConnection(render << con.position, con);
+                auto rctxt = render << con.position;
+                this->drawConnection(rctxt, con);
             }
         }
 
     protected:
-        void drawConnection(render::ImGuiContext <math::units::mm> &render, const Connection<ConnectionTypes> &con) {
+        void drawConnection(render::ImGuiContext <math::units::mm> &render, const Connection<ConnectionTypes> &con) const {
             using namespace math::units;
             using namespace render::imgui::units;
             render.drawCircle({0_mm, 0_mm}, 8_mm, IM_COL32_BLACK, 1_impx);

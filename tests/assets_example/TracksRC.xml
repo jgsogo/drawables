@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parts_library name="Official LEGO tracks">
+    <part id="53401" type="track">
+        <name>Train, Track Plastic (RC Trains) Straight</name>
+        <description>Train, Track Plastic (RC Trains) Straight</description>
+        <voltage>NONE</voltage>
+        <gauge>NORMAL</gauge>
+
+        <bbox>
+            <x_min>0</x_min>
+            <y_min>0</y_min>
+            <x_max>64</x_max>
+            <y_max>128</y_max>
+        </bbox>
+
+        <connections>
+            <connection>
+                <type>TRACK</type>
+                <position x="32" y="0"/>
+                <angle>90</angle>
+            </connection>
+            <connection>
+                <type>TRACK</type>
+                <position x="32" y="128"/>
+                <angle>-90</angle>
+            </connection>
+        </connections>
+
+        <bricklink>
+            <id>53401</id>
+            <color colorID="85">Dark Bluish Gray</color>
+        </bricklink>
+        <ldraw>53401.dat</ldraw>
+
+        <render lod="0" type="primitives">
+            <!-- Lines and rects and arcs -->
+            <rectangle order="1" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <x_min>0</x_min>
+                <y_min>0</y_min>
+                <x_max>64</x_max>
+                <y_max>128</y_max>
+            </rectangle>
+            <line order="2" color="#aaaaaa" thickness="4">
+                <start x="12" y="0"/>
+                <end x="12" y="128"/>
+            </line>
+            <line order="3" color="#aaaaaa" thickness="4">
+                <start x="52" y="0"/>
+                <end x="52" y="128"/>
+            </line>
+            <text order="4" color="#777777" font_size="16">
+                <position x="32" y="64"/>
+                <content>1x</content>
+            </text>
+        </render>
+
+        <render lod="1" type="imagefile">
+            <filename>TracksRC.png</filename>
+            <uv_coordinates>
+                <x_min>138</x_min>
+                <y_min>331</y_min>
+                <x_max>239</x_max>
+                <y_max>531</y_max>
+            </uv_coordinates>
+        </render>
+    </part>
+
+    <part id="53400" type="track">
+        <name>Train, Track Plastic (RC Trains) Curve</name>
+        <description>Train, Track Plastic (RC Trains) Curve</description>
+        <voltage>NONE</voltage>
+        <gauge>NORMAL</gauge>
+
+        <bbox>
+            <x_min>0</x_min>
+            <y_min>0</y_min>
+            <x_max>69.53383924</x_max>
+            <y_max>137.3435867</y_max>
+        </bbox>
+
+        <connections>
+            <connection>
+                <type>TRACK</type>
+                <position x="38.14871027" y="6.242890305"/>
+                <angle>101.25</angle>
+            </connection>
+            <connection>
+                <type>TRACK</type>
+                <position x="38.14871027" y="131.1006964"/>
+                <angle>-101.25</angle>
+            </connection>
+        </connections>
+
+        <bricklink>
+            <id>53400</id>
+            <color colorID="85">Dark Bluish Gray</color>
+        </bricklink>
+        <ldraw>53400.dat</ldraw>
+
+        <render lod="0" type="primitives">
+            <!-- Lines and rects and arcs -->
+            <polygon order="1" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <arc order="0" color="#aaaaaa" thickness="4">
+                    <center x="352" y="68.67179335"/>
+                    <radius>352</radius>
+                    <angle start="191.25" end="168.75" dir="-1"/>
+                </arc>
+                <arc order="1" color="#aaaaaa" thickness="4">
+                    <center x="352" y="68.67179335"/>
+                    <radius>288</radius>
+                    <angle start="168.75" end="191.25" dir="1"/>
+                </arc>
+            </polygon>
+            <arc order="2" color="#aaaaaa" thickness="4">
+                <center x="352" y="68.67179335"/>
+                <radius>340</radius>
+                <angle start="168.75" end="191.25" dir="1"/>
+            </arc>
+            <arc order="3" color="#aaaaaa" thickness="4">
+                <center x="352" y="68.67179335"/>
+                <radius>300</radius>
+                <angle start="168.75" end="191.25" dir="1"/>
+            </arc>
+            <text order="4" color="#777777" font_size="16">
+                <position x="62.4289030452" y="38.148710271"/> x = 40*8*sin(22,5/2)  ||||  y = 44*8-40*8*cos(22,5/2)
+                <content>R40</content>
+            </text>
+        </render>
+
+        <render lod="1" type="imagefile">
+            <filename>TracksRC.png</filename>
+            <uv_coordinates>
+                <x_min>7</x_min>
+                <y_min>323</y_min>
+                <x_max>115</x_max>
+                <y_max>540</y_max>
+            </uv_coordinates>
+        </render>
+
+    </part>
+
+    <part id="53407" type="track">
+        <name>Train, Track Plastic (RC Trains) Switch Point Left</name>
+        <description>Train, Track Plastic (RC Trains) Switch Point Left</description>
+        <voltage>NONE</voltage>
+        <gauge>NORMAL</gauge>
+
+        <bbox>
+            <x_min>0</x_min>
+            <y_min>0</y_min>
+            <x_max>165.2055954</x_max>
+            <y_max>273.7871715</y_max>
+        </bbox>
+
+        <connections>
+            <connection>
+                <type>TRACK</type>
+                <position x="133.2055954" y="273.7871715"/>
+                <angle>-90</angle>
+            </connection>
+            <connection>
+                <type>TRACK</type>
+                <position x="133.2055954" y="17.78717148"/>
+                <angle>90</angle>
+            </connection>
+            <connection>
+                <type>TRACK</type>
+                <position x="29.56414504" y="12.24586984"/>
+                <angle>67.5</angle>
+            </connection>
+        </connections>
+
+        <bricklink>
+            <id>53407</id>
+            <color colorID="85">Dark Bluish Gray</color>
+        </bricklink>
+        <ldraw>53407c01.dat</ldraw>
+
+        <render lod="0" type="primitives">
+            <!-- Straight part -->
+            <rectangle order="1" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <x_min>101.2055954</x_min>
+                <y_min>17.78717148</y_min>
+                <x_max>165.2055954</x_max>
+                <y_max>273.7871715</y_max>
+            </rectangle>
+            <line order="4" color="#aaaaaa" thickness="4">
+                <start x="113.2055954" y="17.78717148"/>
+                <end x="113.2055954" y="273.7871715"/>
+            </line>
+            <line order="5" color="#aaaaaa" thickness="4">
+                <start x="153.2055954" y="17.78717148"/>
+                <end x="153.2055954" y="273.7871715"/>
+            </line>
+
+            <!-- Branch part 1 -->
+            <polygon order="2" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <arc order="0" color="#aaaaaa" thickness="4">
+                    <center x="-186.7944046" y="273.7871715"/>
+                    <radius>352</radius>
+                    <angle start="-36.86989764" end="0" dir="1"/>
+                </arc>
+                <arc order="1" color="#aaaaaa" thickness="4">
+                    <center x="-186.7944046" y="273.7871715"/>
+                    <radius>288</radius>
+                    <angle start="0" end="-36.86989764" dir="-1"/>
+                </arc>
+            </polygon>
+            <arc order="6" color="#aaaaaa" thickness="4">
+                <center x="-186.7944046" y="273.7871715"/>
+                <radius>340</radius>
+                <angle start="0" end="-36.86989764" dir="-1"/>
+            </arc>
+            <arc order="7" color="#aaaaaa" thickness="4">
+                <center x="-186.7944046" y="273.7871715"/>
+                <radius>300</radius>
+                <angle start="0" end="-36.86989764" dir="-1"/>
+            </arc>
+
+            <!-- Branch part 2 -->
+            <polygon order="3" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <arc order="0" color="#aaaaaa" thickness="4">
+                    <center x="325.2055954" y="-110.2128285"/>
+                    <radius>352</radius>
+                    <angle start="-216.8698976" end="-202.5" dir="1"/>
+                </arc>
+                <arc order="1" color="#aaaaaa" thickness="4">
+                    <center x="325.2055954" y="-110.2128285"/>
+                    <radius>288</radius>
+                    <angle start="-202.5" end="-216.8698976" dir="-1"/>
+                </arc>
+            </polygon>
+            <arc order="8" color="#aaaaaa" thickness="4">
+                <center x="325.2055954" y="-110.2128285"/>
+                <radius>340</radius>
+                <angle start="-202.5" end="-216.8698976" dir="-1"/>
+            </arc>
+            <arc order="9" color="#aaaaaa" thickness="4">
+                <center x="325.2055954" y="-110.2128285"/>
+                <radius>300</radius>
+                <angle start="-202.5" end="-216.8698976" dir="-1"/>
+            </arc>
+
+            <!-- Identificator -->
+            <text order="10" color="#777777" font_size="16">
+                <position x="32" y="64"/>
+                <content>1x</content>
+            </text>
+        </render>
+
+        <render lod="1" type="imagefile">
+            <filename>TracksRC.png</filename>
+            <uv_coordinates>
+                <x_min>256</x_min>
+                <y_min>103</y_min>
+                <x_max>515</x_max>
+                <y_max>532</y_max>
+            </uv_coordinates>
+        </render>
+    </part>
+
+    <part id="53404" type="track">
+        <name>Train, Track Plastic (RC Trains) Switch Point Right</name>
+        <description>Train, Track Plastic (RC Trains) Switch Point Right</description>
+        <voltage>NONE</voltage>
+        <gauge>NORMAL</gauge>
+
+        <bbox>
+            <x_min>0</x_min>
+            <y_min>0</y_min>
+            <x_max>165.2055954</x_max>
+            <y_max>273.7871715</y_max>
+        </bbox>
+
+        <connections>
+            <connection>
+                <type>TRACK</type>
+                <position x="32" y="273.7871715"/>
+                <angle>-90</angle>
+            </connection>
+            <connection>
+                <type>TRACK</type>
+                <position x="32" y="17.78717148"/>
+                <angle>90</angle>
+            </connection>
+            <connection>
+                <type>TRACK</type>
+                <position x="135.6414504" y="12.24586984"/>
+                <angle>112.5</angle>
+            </connection>
+        </connections>
+
+        <bricklink>
+            <id>53404</id>
+            <color colorID="85">Dark Bluish Gray</color>
+        </bricklink>
+        <ldraw>53404c01.dat</ldraw>
+
+        <render lod="0" type="primitives">
+            <!-- Straight part -->
+            <rectangle order="1" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <x_min>0</x_min>
+                <y_min>17.78717148</y_min>
+                <x_max>64</x_max>
+                <y_max>273.7871715</y_max>
+            </rectangle>
+            <line order="4" color="#aaaaaa" thickness="4">
+                <start x="52" y="17.78717148"/>
+                <end x="52" y="273.7871715"/>
+            </line>
+            <line order="5" color="#aaaaaa" thickness="4">
+                <start x="12" y="17.78717148"/>
+                <end x="12" y="273.7871715"/>
+            </line>
+
+            <!-- Branch part 1 -->
+            <polygon order="2" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <arc order="0" color="#aaaaaa" thickness="4">
+                    <center x="352" y="273.7871715"/>
+                    <radius>352</radius>
+                    <angle start="180" end="216.8698976" dir="1"/>
+                </arc>
+                <arc order="1" color="#aaaaaa" thickness="4">
+                    <center x="352" y="273.7871715"/>
+                    <radius>288</radius>
+                    <angle start="216.8698976" end="180" dir="-1"/>
+                </arc>
+            </polygon>
+            <arc order="6" color="#aaaaaa" thickness="4">
+                <center x="352" y="273.7871715"/>
+                <radius>340</radius>
+                <angle start="180" end="216.8698976" dir="1"/>
+            </arc>
+            <arc order="7" color="#aaaaaa" thickness="4">
+                <center x="352" y="273.7871715"/>
+                <radius>300</radius>
+                <angle start="180" end="216.8698976" dir="1"/>
+            </arc>
+
+            <!-- Branch part 2 -->
+            <polygon order="3" borderColor="#ff0000" fillColor="#ff0000" borderThickness="2">
+                <arc order="0" color="#aaaaaa" thickness="4">
+                    <center x="-160" y="-110.2128285"/>
+                    <radius>352</radius>
+                    <angle start="22.5" end="36.86989764" dir="1"/>
+                </arc>
+                <arc order="1" color="#aaaaaa" thickness="4">
+                    <center x="-160" y="-110.2128285"/>
+                    <radius>288</radius>
+                    <angle start="36.86989764" end="22.5" dir="-1"/>
+                </arc>
+            </polygon>
+            <arc order="8" color="#aaaaaa" thickness="4">
+                <center x="-160" y="-110.2128285"/>
+                <radius>340</radius>
+                <angle start="22.5" end="36.86989764" dir="1"/>
+            </arc>
+            <arc order="9" color="#aaaaaa" thickness="4">
+                <center x="-160" y="-110.2128285"/>
+                <radius>300</radius>
+                <angle start="22.5" end="36.86989764" dir="1"/>
+            </arc>
+
+            <!-- Identificator -->
+            <text order="10" color="#777777" font_size="16">
+                <position x="32" y="64"/>
+                <content>1x</content>
+            </text>
+        </render>
+
+        <render lod="1" type="imagefile">
+            <filename>TracksRC.png</filename>
+            <uv_coordinates>
+                <x_min>534</x_min>
+                <y_min>103</y_min>
+                <x_max>794</x_max>
+                <y_max>532</y_max>
+            </uv_coordinates>
+        </render>
+    </part>
+
+</parts_library>
