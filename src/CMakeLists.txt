@@ -7,3 +7,8 @@ find_package(render_context REQUIRED)
 
 add_subdirectory(drawables)
 add_subdirectory(parser)
+
+option(BUILD_TOOLS "Also build the tools" ON)
+if (BUILD_TOOLS)
+    add_subdirectory(validator)
+endif()

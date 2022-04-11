@@ -5,6 +5,16 @@ fmt/8.1.1
 spdlog/1.9.2
 rapidxml/1.13
 
+# For the tools
+magnum-plugins/2020.06
+magnum-integration/2020.06
+
+# Overrides
+magnum/2020.06@jgsogo/stable
+
+[options]
+magnum-plugins:shared_plugins=False
+
 [generators]
 cmake
 cmake_find_package

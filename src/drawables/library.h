@@ -13,7 +13,7 @@ namespace drawables {
 
         [[nodiscard]] std::string_view getName() const { return _name; }
 
-        [[nodiscard]] const std::map<std::string, std::shared_ptr<BaseDrawable>> &getDrawable() const { return _drawables; }
+        [[nodiscard]] const std::map<std::string, std::shared_ptr<BaseDrawable>> &getDrawables() const { return _drawables; }
 
     protected:
         friend class Parser;
