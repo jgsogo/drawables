@@ -23,7 +23,7 @@ namespace drawables {
 
     }
 
-    Library Parser::parse(std::string_view name, const std::filesystem::path &filename) {
+    Library Parser::parse(const std::filesystem::path &filename) {
         spdlog::info("Library::parse(filename='{}')", filename.string());
 
         // Parse the document
@@ -45,7 +45,7 @@ namespace drawables {
             Library ret{library_name};
             for (rapidxml::xml_node<> *partNode = root_node->first_node("part"); partNode; partNode = partNode->next_sibling()) {
                 auto[id, part] = this->parse(partNode, filename);
-                part->id = Id{std::string{name}, id};
+                part->id = Id{std::string{library_name}, id};
                 ret._drawables.insert(std::make_pair(id, part));  // TODO: What if I apply XSLT transformation first instead of passing the arg?
             }
             return ret;

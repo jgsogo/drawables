@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
     spdlog::info("Parse file '{}'", library_filename);
     drawables::Parser parser(app.loader);
     drawables::ParserRegistry::instance().populateParser(parser);
-    auto library = parser.parse("name", library_filename);
+    auto library = parser.parse(library_filename);
 
     std::cout << "Library: " << library.getName() << std::endl;
     for (auto&[id, part]: library.getDrawables()) {

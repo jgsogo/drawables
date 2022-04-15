@@ -12,7 +12,7 @@ add_library(parser
         texture_loader.h
         )
 set_target_properties(parser PROPERTIES
-        PUBLIC_HEADER "enums.hpp;helpers.hpp;parser.h;primitives.h;texture_loader.h"
+        PUBLIC_HEADER "enums.hpp;helpers.h;parser.h;primitives.h;texture_loader.h"
         )
 target_include_directories(parser PUBLIC ${CMAKE_CURRENT_LIST_DIR}/..)
 target_link_libraries(parser

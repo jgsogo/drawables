@@ -24,7 +24,7 @@ namespace drawables {
 
         NodeParsed parse(rapidxml::xml_node<> *node, const std::filesystem::path &filename);
 
-        Library parse(std::string_view name, const std::filesystem::path &filename);
+        Library parse(const std::filesystem::path &filename);
 
     protected:
         TextureLoader &_loader;
