@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.15)
 
+find_package(spdlog REQUIRED)
+find_package(rapidxml REQUIRED)
+find_package(fmt REQUIRED)
+find_package(render_context REQUIRED)
 
-add_library(${PROJECT_NAME} INTERFACE)  # TODO: Change to proper library and add your files
-set_target_properties(${PROJECT_NAME} PROPERTIES
-        PUBLIC_HEADER ""  # TODO: Add your headers here
-        )
-target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_LIST_DIR})
+add_subdirectory(drawables)
+add_subdirectory(parser)
 
-install(TARGETS ${PROJECT_NAME}
-        PUBLIC_HEADER DESTINATION include
-        RUNTIME DESTINATION bin
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib)
+option(BUILD_TOOLS "Also build the tools" ON)
+if (BUILD_TOOLS)
+    add_subdirectory(validator)
+endif()

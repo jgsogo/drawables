@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 
+add_subdirectory(assets_example)
+
 find_package(Catch2 REQUIRED)
+
 
 enable_testing()
 
