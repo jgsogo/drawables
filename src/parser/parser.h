@@ -1,6 +1,7 @@
 #pragma once
 
 #include <rapidxml.hpp>
+#include <functional>
 
 #include "drawables/drawable.h"
 #include "drawables/library.h"
