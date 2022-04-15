@@ -1,6 +1,7 @@
 #pragma once
 
 #include <rapidxml.hpp>
+#include <memory>
 
 #include "primitives/line_element.hpp"
 #include "primitives/arc.hpp"
