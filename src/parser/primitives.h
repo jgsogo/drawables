@@ -1,7 +1,7 @@
 #pragma once
 
 #include <rapidxml.hpp>
-#include <memory>
+#include <memory>  // TODO: remove after https://github.com/jgsogo/render_context/issues/40
 
 #include "primitives/line_element.hpp"
 #include "primitives/arc.hpp"
