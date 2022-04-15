@@ -21,7 +21,7 @@ namespace drawables {
 
         virtual ~BaseDrawable() = default;
 
-        void doRender(render::ImGuiContext <math::units::mm> &render, int level = -1) const;
+        void doRender(render::ImGuiContext <math::units::mm> &render, int lodLevel = -1) const;
 
         virtual void doRenderConnections(render::ImGuiContext <math::units::mm> &render) const = 0;
 
