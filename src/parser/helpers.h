@@ -10,12 +10,7 @@
 
 namespace drawables::parser {
 
-    std::optional<std::string> optionalStr(rapidxml::xml_node<> *node) {
-        if (node == nullptr) {
-            return std::nullopt;
-        }
-        return node->value();
-    }
+    std::optional<std::string> optionalStr(rapidxml::xml_node<> *node);
 
     template<class T>
     T stoXXX(const std::string &str) {
@@ -23,9 +18,7 @@ namespace drawables::parser {
     }
 
     template<>
-    int stoXXX<int>(const std::string &str) {
-        return std::stoi(str);
-    }
+    int stoXXX<int>(const std::string &str);
 
     template<class T>
     Magnum::Math::Range2D <T> parseRange(rapidxml::xml_node<> *node) {
@@ -54,10 +47,6 @@ namespace drawables::parser {
         return {x, y};
     }
 
-    ImU32 parseColor(char *color) {
-        int r, g, b;
-        sscanf(color, "#%02x%02x%02x", &r, &g, &b);
-        return IM_COL32(r, g, b, 255);
-    }
+    ImU32 parseColor(char *color);
 
 }

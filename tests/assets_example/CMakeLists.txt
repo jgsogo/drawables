@@ -32,6 +32,7 @@ add_executable(assets_example_validator
 target_link_libraries(assets_example_validator
         PRIVATE
             validator-lib
+            assets_example
         )
 target_compile_definitions(assets_example_validator
         PRIVATE

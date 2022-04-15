@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <spdlog/spdlog.h>
 
-#include "helpers.hpp"
+#include "helpers.h"
 
 namespace drawables::parser {
 

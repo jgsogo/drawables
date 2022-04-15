@@ -8,6 +8,7 @@
 namespace example {
 
     struct LegoPart : public drawables::Drawable<ConnectionType> {
+        constexpr static char type[] = "part";
         using Connection = drawables::Connection<ConnectionType>;
 
         // Cross-reference

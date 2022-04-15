@@ -14,6 +14,7 @@ namespace example {
     };
 
     struct LegoTrack : public LegoPart {
+        constexpr static char type[] = "track";
         Voltage volt = Voltage::NONE;
         Gauge gauge = Gauge::NORMAL;
     };

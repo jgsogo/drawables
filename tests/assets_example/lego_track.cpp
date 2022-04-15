@@ -19,23 +19,23 @@ namespace drawables::parser {
 
     // train voltage
     template<>
-    inline example::Voltage parseEnum<example::Voltage>(std::string_view str) {
+    example::Voltage parseEnum<example::Voltage>(std::string_view str) {
         return parseEnum(str, tableVoltage);
     }
 
     template<>
-    inline std::string_view strEnum<example::Voltage>(const example::Voltage &value) {
+    std::string_view strEnum<example::Voltage>(const example::Voltage &value) {
         return strEnum(value, tableVoltage);
     }
 
     // train gauge
     template<>
-    inline example::Gauge parseEnum<example::Gauge>(std::string_view str) {
+    example::Gauge parseEnum<example::Gauge>(std::string_view str) {
         return parseEnum(str, tableGauge);
     }
 
     template<>
-    inline std::string_view strEnum<example::Gauge>(const example::Gauge &value) {
+    std::string_view strEnum<example::Gauge>(const example::Gauge &value) {
         return strEnum(value, tableGauge);
     }
 }

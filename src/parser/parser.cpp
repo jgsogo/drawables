@@ -7,7 +7,7 @@ namespace drawables {
 
     Parser::Parser(TextureLoader &loader) : _loader{loader} {};
 
-    void Parser::registerNodeParser(std::string_view nodeType, const NodeParserCallback& parseFunction) {
+    void Parser::registerNodeParser(std::string_view nodeType, const NodeParserCallback &parseFunction) {
         _parseMethods.insert(std::make_pair(nodeType, parseFunction));
     }
 
@@ -53,5 +53,20 @@ namespace drawables {
             // TODO: Handle error
             spdlog::error("Cannot find root node 'parts_library' in filename '{}'", filename.string());
         }
+    }
+
+    ParserRegistry &ParserRegistry::instance() {
+        static ParserRegistry registry;
+        return registry;
+    }
+
+    void ParserRegistry::populateParser(Parser &parser) {
+        for (const auto& it: _libraries) {
+            it(parser);
+        }
+    }
+
+    void ParserRegistry::registerLibrary(const std::function<void(Parser &)>& library) {
+        _libraries.push_back(library);
     }
 }

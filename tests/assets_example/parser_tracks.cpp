@@ -2,7 +2,7 @@
 
 #include <spdlog/spdlog.h>
 #include "parser/enums.hpp"
-#include "parser/helpers.hpp"
+#include "parser/helpers.h"
 #include "parser/primitives.h"
 
 #include "lego_part.h"

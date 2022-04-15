@@ -1,8 +1,9 @@
 #pragma once
 
+#include "parser/parser.h"
+
 namespace example {
 
-    class Library {
-    };
+    void registerParser(drawables::Parser& parser);
 
 }

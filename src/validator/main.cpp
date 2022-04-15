@@ -41,6 +41,7 @@ int main(int argc, char **argv) {
     spdlog::set_level(spdlog::level::trace);
     spdlog::info("Parse file '{}'", library_filename);
     drawables::Parser parser(app.loader);
+    drawables::ParserRegistry::instance().populateParser(parser);
     auto library = parser.parse("name", library_filename);
 
     std::cout << "Library: " << library.getName() << std::endl;

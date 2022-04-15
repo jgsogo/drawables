@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.15)
 
 add_library(parser
         enums.hpp
-        helpers.hpp
+        helpers.cpp
+        helpers.h
         parser.cpp
         parser.h
         primitives.cpp
