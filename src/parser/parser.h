@@ -12,9 +12,7 @@ namespace drawables {
     class Parser {
     public:
         using NodeParsed = std::pair<std::string, std::shared_ptr<BaseDrawable>>;
-        using NodeParserCallback = std::function<
-        NodeParsed (rapidxml::xml_node<>
-        *, const std::filesystem::path&, TextureLoader &)>;
+        using NodeParserCallback = std::function<NodeParsed(rapidxml::xml_node<> *, const std::filesystem::path &, TextureLoader &)>;
 
         explicit Parser(TextureLoader &loader);
 
@@ -37,7 +35,8 @@ namespace drawables {
 
         void populateParser(Parser &);
 
-        void registerLibrary(const std::function<void(Parser &)>&);
+        void registerLibrary(const std::function<void(Parser &)> &);
+
     protected:
         ParserRegistry() = default;
 
