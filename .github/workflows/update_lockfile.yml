@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: conanio/gcc11-ubuntu16.04:1.46.2
+      options: --user root
     env:
       CONAN_USER_HOME: /home/conan
       CONAN_SYSREQUIRES_MODE: enabled
@@ -53,7 +54,7 @@ jobs:
           conan lock create --name=${{ github.event.repository.name }} --version=0.1.0 --base --lockfile-out lockfile.json --build --profile:host=.conan/profiles/cpp20 --profile:build=default conanfile.txt
           git diff
 
-      - uses: tibdex/github-app-token@7ce9ffdcdeb2ba82b01b51d6584a6a85872336d4
+      - uses: tibdex/github-app-token@c95b1c441a4dacd6d24f231b9697a5f9a04c607e
         id: generate_token
         with:
           app_id: ${{ secrets.APP_RECIPES_APP_ID }}
