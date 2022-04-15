@@ -11,12 +11,13 @@ namespace drawables {
     public:
         explicit Library(std::string_view name);
 
-        [[nodiscard]] std::string_view getName() const { return _name; }
+        [[nodiscard]] std::string_view getName() const;
 
-        [[nodiscard]] const std::map<std::string, std::shared_ptr<BaseDrawable>> &getDrawables() const { return _drawables; }
+        [[nodiscard]] const std::map<std::string, std::shared_ptr<BaseDrawable>> &getDrawables() const;
 
     protected:
         friend class Parser;
+
         const std::string _name;
         std::map<std::string, std::shared_ptr<BaseDrawable>> _drawables;
     };
