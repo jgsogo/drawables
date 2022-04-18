@@ -2,8 +2,8 @@
 
 namespace drawables {
 
-    void BaseDrawable::doRender(render::ImGuiContext <math::units::mm> &render, int level) const {
-        auto itDataToRender = renderData.lower_bound(level);
+    void BaseDrawable::doRender(render::ImGuiContext <math::units::mm> &render, int lodLevel) const {
+        auto itDataToRender = renderData.lower_bound(lodLevel);
         for (auto &it: itDataToRender->second) {
             it->doRender(render);
         }
