@@ -4,13 +4,11 @@ add_subdirectory(assets_example)
 
 find_package(Catch2 REQUIRED)
 
-
 enable_testing()
 
 add_executable(unit_tests
         main.cpp
-
-        # TODO: Add your 'test_xxxx.cpp' files here
+        test_drawables/test_drawable.cpp
         )
 target_link_libraries(unit_tests
         Catch2::Catch2
