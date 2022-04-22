@@ -20,7 +20,7 @@
     "context": "host"
    },
    "2": {
-    "ref": "render_context/v0.2.8@jgsogo/stable#0d366d31626cca020702c3c191409ceb",
+    "ref": "render_context/v0.2.8@jgsogo/stable#4e393528cb86bc910fe3ed47cc9ec558",
     "python_requires": [
      "base_conanfile/v0.2.0@jgsogo/stable#d1aa388cccd362486069078c9da87dcc"
     ],
@@ -148,7 +148,7 @@
     "context": "host"
    },
    "20": {
-    "ref": "sdl/2.0.16#2fd64996a698c218415a466e8f939be0",
+    "ref": "sdl/2.0.16#b93b591ec3f1356c7ede9fcf965de88f",
     "requires": [
      "16",
      "7",
@@ -338,7 +338,7 @@
     "context": "host"
    },
    "43": {
-    "ref": "spdlog/1.9.2#743be2f16763efa5a573562315ef3611",
+    "ref": "spdlog/1.9.2#d0672f70a4415721ad4fc64842b10596",
     "requires": [
      "42"
     ],
@@ -383,7 +383,7 @@
     "context": "host"
    },
    "48": {
-    "ref": "minizip/1.2.12#c7ca0f1bcce5559c3e0d04c4f7c4a4ca",
+    "ref": "minizip/1.2.12#0b5296887a2558500d0323c6c94c8d02",
     "requires": [
      "15",
      "49"
@@ -444,7 +444,7 @@
     "context": "host"
    },
    "59": {
-    "ref": "glib/2.72.0#598bbcce2afe1b40b55ae5e2a2e3718d",
+    "ref": "glib/2.72.0#6545a4e4e8a8d5ef2dda094c69e7b513",
     "requires": [
      "15",
      "13",
@@ -594,7 +594,7 @@
     "context": "build"
    },
    "83": {
-    "ref": "bison/3.7.1#ad29e804e82c8b6d58765096676b5a5e",
+    "ref": "bison/3.7.1#43f41b53bc998bbfbd3839057478742a",
     "requires": [
      "84"
     ],
@@ -940,7 +940,7 @@
     "context": "build"
    },
    "137": {
-    "ref": "bison/3.7.6#617948f0c002e1ab9c22439c9e6a24ab",
+    "ref": "bison/3.7.6#de3449489624dbc45cfb8a868818def8",
     "requires": [
      "138"
     ],
