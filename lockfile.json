@@ -20,7 +20,7 @@
     "context": "host"
    },
    "2": {
-    "ref": "render_context/v0.2.8@jgsogo/stable#4e393528cb86bc910fe3ed47cc9ec558",
+    "ref": "render_context/v0.2.9@jgsogo/stable#4e393528cb86bc910fe3ed47cc9ec558",
     "python_requires": [
      "base_conanfile/v0.2.0@jgsogo/stable#d1aa388cccd362486069078c9da87dcc"
     ],
