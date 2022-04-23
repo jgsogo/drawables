@@ -2,18 +2,6 @@
 
 #include <unordered_map>
 
-namespace drawables {
-
-    template<>
-    void Drawable<example::ConnectionType>::drawConnection(render::ImGuiContext <math::units::mm> &render,
-                                                           const Connection<example::ConnectionType> &con) {
-        using namespace math::units;
-        using namespace render::imgui::units;
-        render.drawCircle({0_mm, 0_mm}, 8_mm, IM_COL32(255, 255, 0, 255), 1_impx);
-    }
-
-}
-
 namespace drawables::parser {
     namespace {
         const std::unordered_map<std::string_view, example::ConnectionType> tableConnectionType = {

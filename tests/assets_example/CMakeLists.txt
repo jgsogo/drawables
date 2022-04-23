@@ -8,9 +8,7 @@ add_library(assets_example
         lego_part.h
         lego_track.cpp
         lego_track.h
-        library.cpp
         library.h
-        parser_tracks.cpp
         parser_tracks.h
         )
 set_target_properties(assets_example PROPERTIES

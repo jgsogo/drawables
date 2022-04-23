@@ -13,6 +13,7 @@ namespace drawables::parser {
             return it->second;
         } else {
             // TODO: Handle error
+            throw std::runtime_error("Enum str-value not found");
         }
     }
 
@@ -23,6 +24,7 @@ namespace drawables::parser {
             return found->first;
         }
         // TODO: Handle error
+        throw std::runtime_error("Enum value not found");
     }
 
     template<typename T>
