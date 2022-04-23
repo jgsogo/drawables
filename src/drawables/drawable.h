@@ -23,12 +23,24 @@ namespace drawables {
 
         using Primitive = primitives::Primitive<Origin, TDrawList, PixelsSymbol>;
         using RenderContext = typename Primitive::RenderContext;
-        std::map<int, std::vector<std::shared_ptr<Primitive>>, std::greater<>> renderData;
+        std::map<int, std::vector<std::shared_ptr<Primitive>>, std::less<>> renderData;
 
         void doRender(RenderContext &render, int lodLevel = -1) const {
-            auto itDataToRender = renderData.lower_bound(lodLevel);
-            for (auto &it: itDataToRender->second) {
-                it->doRender(render);
+            // Use LOD level available that is EQUAL OR LESS to the value requested (fallback to lowest)
+            if (renderData.empty()) return;
+
+            auto selected = --(renderData.rend());
+            auto it = renderData.rbegin();
+            while (it != renderData.rend()) {
+                if (it->first > lodLevel) {
+                    ++it;
+                    continue;
+                }
+                selected = it;
+                break;
+            }
+            for (auto &it_drw: selected->second) {
+                it_drw->doRender(render);
             }
         }
 
