@@ -5,6 +5,8 @@
 #include <spdlog/spdlog.h>
 #include <Magnum/Platform/Sdl2Application.h>
 
+#include "render/imgui/pixels.hpp"
+
 #include "parser/parser.h"
 
 class TheApplication : public Magnum::Platform::Application {
@@ -40,8 +42,8 @@ int main(int argc, char **argv) {
 
     spdlog::set_level(spdlog::level::trace);
     spdlog::info("Parse file '{}'", library_filename);
-    drawables::Parser parser(app.loader);
-    drawables::ParserRegistry::instance().populateParser(parser);
+    drawables::Parser<math::units::mm, ImDrawList, render::imgui::units::impx> parser(app.loader);
+    drawables::ParserRegistry<math::units::mm, ImDrawList, render::imgui::units::impx>::instance().populateParser(parser);
     auto library = parser.parse(library_filename);
 
     std::cout << "Library: " << library.getName() << std::endl;

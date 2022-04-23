@@ -13,7 +13,8 @@ namespace example {
         NORMAL, NARROW, MONORRAIL
     };
 
-    struct LegoTrack : public LegoPart {
+    template<const char *Origin, typename TDrawList, const char *PixelsSymbol>
+    struct LegoTrack : public LegoPart<Origin, TDrawList, PixelsSymbol> {
         constexpr static char type[] = "track";
         Voltage volt = Voltage::NONE;
         Gauge gauge = Gauge::NORMAL;

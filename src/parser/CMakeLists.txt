@@ -4,9 +4,7 @@ add_library(parser
         enums.hpp
         helpers.cpp
         helpers.h
-        parser.cpp
         parser.h
-        primitives.cpp
         primitives.h
         texture_loader.cpp
         texture_loader.h

@@ -11,14 +11,6 @@ namespace example {
 
 }
 
-namespace drawables {
-
-    template<>
-    void Drawable<example::ConnectionType>::drawConnection(render::ImGuiContext <math::units::mm> &render,
-                                                           const Connection<example::ConnectionType> &con);
-
-}
-
 namespace drawables::parser {
     template<>
     example::ConnectionType parseEnum<example::ConnectionType>(std::string_view str);
