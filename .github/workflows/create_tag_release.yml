@@ -35,6 +35,9 @@ jobs:
       github_sha: master
       profile: cpp20
       remote_project: https://sogo.jfrog.io/artifactory/api/conan/${{ github.event.repository.name }}
+    secrets:
+      RT_TOKEN: ${{ secrets.RT_TOKEN }}
+      RT_USERNAME: ${{ secrets.RT_USERNAME }}
 
   create_release:
     needs:
