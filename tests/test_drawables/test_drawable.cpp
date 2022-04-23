@@ -10,7 +10,6 @@
 
 #include "mocks/mock_draw_list.hpp"
 
-
 using namespace math::units;
 using namespace render::units;
 
