@@ -33,6 +33,8 @@ jobs:
       library_name: ${{ github.event.repository.name }}
       library_version: ${{ needs.cmakelists-version.outputs.LIBRARY_VERSION }}
       github_sha: master
+      profile: cpp20
+      remote_project: https://sogo.jfrog.io/artifactory/api/conan/${{ github.event.repository.name }}
 
   create_release:
     needs:
