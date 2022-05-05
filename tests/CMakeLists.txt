@@ -14,6 +14,7 @@ add_executable(unit_tests
 
         assets_example/import_static.cpp
         test_drawables_library/test_drawable.cpp
+        test_drawables_library/test_part.cpp
         )
 target_include_directories(unit_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(unit_tests

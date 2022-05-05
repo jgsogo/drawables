@@ -14,15 +14,6 @@ using namespace math::units;
 using namespace render::units;
 
 TEST_CASE("test_drawables_library/test_drawable | doRender", "[parser/drawable]") {
-    mocks::DrawList drwList;
-
-    using TransformationType = math::xy::types::Transformation<math::Pixels::symbol, math::Pixels::symbol, float>;
-    TransformationType::Translation translation{10_px, 20_px};
-    TransformationType::Rotation rotation{0_deg};
-    auto scale = math::ratio(1_mm, 1_px);
-
-    auto context = render::Context<math::units::mm, mocks::DrawList>{drwList, translation, rotation, scale};
-
     int argc = 1;
     char *argv[] = {"unit_tests", nullptr};
     auto args = Magnum::Platform::Application::Arguments{argc, argv};
@@ -41,15 +32,14 @@ TEST_CASE("test_drawables_library/test_drawable | doRender", "[parser/drawable]"
         auto track = library.getDrawables().at("53401");
         track->doRender(ctxt);
 
-
-    }
-    {
-        mocks::DrawList drwList;
-        auto ctxt = render::Context<math::units::mm, mocks::DrawList, math::units::px>{drwList};
-        auto track = library.getDrawables().at("53401");
-        track->doRender(ctxt, 0);
-
-
+        REQUIRE(drwList.drawCircle.empty());
+        REQUIRE(drwList.drawLine.size() == 2);
+        REQUIRE(drwList.drawRectangle.empty());
+        REQUIRE(drwList.drawRectangleFilled.empty());
+        REQUIRE(drwList.drawPolyline.size() == 1);
+        REQUIRE(drwList.drawPolylineFilled.size() == 1);
+        REQUIRE(drwList.drawText.size() == 1);
+        REQUIRE(drwList.drawImage.empty());
     }
     {
         mocks::DrawList drwList;
@@ -57,9 +47,13 @@ TEST_CASE("test_drawables_library/test_drawable | doRender", "[parser/drawable]"
         auto track = library.getDrawables().at("53401");
         track->doRender(ctxt, 2);
 
-
+        REQUIRE(drwList.drawCircle.empty());
+        REQUIRE(drwList.drawLine.empty());
+        REQUIRE(drwList.drawRectangle.empty());
+        REQUIRE(drwList.drawRectangleFilled.empty());
+        REQUIRE(drwList.drawPolyline.empty());
+        REQUIRE(drwList.drawPolylineFilled.empty());
+        REQUIRE(drwList.drawText.empty());
+        REQUIRE(drwList.drawImage.size() == 1);
     }
-    //track->doRender(context);
-
-    REQUIRE(42 == 42);
 }
