@@ -11,13 +11,15 @@ enable_testing()
 add_executable(unit_tests
         main.cpp
         test_drawables/test_drawable.cpp
-        #assets_example/import_static.cpp
-        #test_drawables_library/test_drawable.cpp
+
+        assets_example/import_static.cpp
+        test_drawables_library/test_drawable.cpp
+        test_drawables_library/test_part.cpp
         )
 target_include_directories(unit_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(unit_tests
         parser
-        #assets_example
+        assets_example
         spdlog::spdlog
         Catch2::Catch2
         Magnum::Sdl2Application
