@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(drawables
         LANGUAGES C CXX
-        VERSION 0.1.0
+        VERSION 0.1.1
         DESCRIPTION "Libraries for drawable items (using Magnum)")
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
